@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         if (qtd_acao > 0){
-            val gastos = "Volume(R$): $volume"
+            val gastos = "Volume(R$): ${String.format("%.2f", volume)}"
             resultado_valorGasto.text = gastos
             resultado_valorGasto.visibility = View.VISIBLE
         } else {
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         if (cotaCompra > 0.0 && cotaAtual > 0.0){
-            val lucroPrejuizo = "Ganho (%): ${String.format("%.2f", lucro_prejuizo)}"
+            val lucroPrejuizo = "Ganhos(%): ${String.format("%.2f", lucro_prejuizo)}%"
             if (lucro_prejuizo < 0.0){
                 resultado_lucro_rejuizo.text = lucroPrejuizo
                 resultado_lucro_rejuizo.setTextColor(Color.parseColor("#ff0000"))
